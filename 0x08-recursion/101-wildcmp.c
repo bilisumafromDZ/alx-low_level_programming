@@ -14,15 +14,16 @@ int wildcmp(char *s1, char *s2);
  */
 int strlen_no_wilds(char *str)
 {
-	int len = 0, index = 0;
+	int len = 0;
+	int index = 0;
 
 	if (*(str + index))
 	{
 		if (*str != '*')
 			len++;
 
-			index++;
-			len += strlen_no_wilds(str + index);
+		index++;
+		len += strlen_no_wilds(str + index);
 	}
 
 	return (len);
